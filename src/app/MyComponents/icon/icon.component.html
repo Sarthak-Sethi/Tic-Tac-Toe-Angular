@@ -1,0 +1,21 @@
+<p class="text-white">icon works!</p>
+
+<div [ngSwitch]="iconName">
+    <!-- 1st case -->
+    <div *ngSwitchCase=" 'empty' ">
+        <img src="../../../assets/pencil.gif" alt="" class="icon">
+    </div>
+    <!-- 2nd case -->
+    <div *ngSwitchCase=" 'circle' ">
+        <img src="../../../assets/circle.png" alt="" class="icon">
+    </div>
+    <!-- 3rd case -->
+    <div *ngSwitchCase=" 'cross' ">
+        <img src="../../../assets/cross.png" alt="" class="icon">
+    </div>
+    <!-- 4th case -->
+    <div *ngSwitchDefault = "showToast()"  >
+        <p class="text-white">Check !</p>
+    </div>
+
+</div>
