@@ -26,15 +26,19 @@ if(this.winMessage!==''){
 else if(this.itemArray[index] === 'empty'){
   this.itemArray[index] = this.isCross ? 'cross' : 'circle';
   this.isCross = !this.isCross;
+  this.isWinner();
   return ;
 }
 else {
   return this.toastr.warning('Already Filled');
 }
-this.isWinner();
+
 }
 
-  isWinner= () => {
+reloadbuttonclicked() {
+ this.reloadGame();
+}
+   isWinner= () => {
     // Rows 
      if(this.itemArray[0] !== 'empty'  && this.itemArray[0] === this.itemArray[1]  && this.itemArray[0] === this.itemArray[2]){
      this.winMessage = `${this.itemArray[0]} won `; 

@@ -1,2 +1,30 @@
-<h1>Tic Tac Toe</h1>
-<app-icon></app-icon>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+
+        <div class="col col-lg-6 border-danger">
+            <div class="text-center">
+                <h1 [hidden]="isCross" class="text-uppercase text-danger">Player One Turn</h1>
+                <h1 [hidden]="!isCross" class="text-uppercase text-danger">Player Two Turn</h1>
+            </div>
+
+            <div class="grid">
+                <div *ngFor="let item of itemArray index as i;">
+                    <div class="card" (click)="handleClick(i)">
+                        <div class="card-box box">
+                            <app-icon [iconName]="item"></app-icon>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col col-lg-6 border-sucess text-center ">
+            <h1 *ngIf="winMessage !== '' " class="text-uppercase">Game Over {{winMessage}}</h1>
+            <button (click)="reloadbuttonclicked()" class="btn btn-danger text-uppercase pl-5 pr-5">
+                Reload Game
+            </button>
+        </div>
+
+    </div>
+</div>

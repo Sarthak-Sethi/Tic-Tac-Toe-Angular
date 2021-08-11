@@ -13,10 +13,10 @@ export class IconComponent implements OnInit {
   @Input() iconName : string ;
  
   constructor(private toastr: ToastrService) { 
-    this.iconName = "";
+    this.iconName = "empty";
   }
   showToast(){
-    return this.toastr.warning('Something Went Wrong', 'Error !',);
+   // return this.toastr.warning('Something Went Wrong', 'Error !',);
   }
 
   ngOnInit(): void {
